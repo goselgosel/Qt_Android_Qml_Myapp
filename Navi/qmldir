@@ -1,0 +1,3 @@
+module Navis
+NavigationBar 1.0 NavigationBar.qml
+NavItem 1.0 NavItem.qml
