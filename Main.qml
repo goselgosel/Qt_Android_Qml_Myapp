@@ -1,12 +1,14 @@
 // main.qml
 import QtQuick 6.5
 import QtQuick.Window 6.5
-import "./ButtonComponents"   // 导入自定义按钮模块
 import QtQuick.Layouts 1.15
+import QtQuick.Controls // 控件模块
+//import ButtonComponents 1.0
 // main.qml
 // 导入必要的模块
+//import "./ButtonComponents"   // 导入自定义按钮模块
 import "./Navi"
-import QtQuick.Controls // 控件模块
+//import Navis 1.0
 
 
 // ApplicationWindow: 应用程序主窗口
@@ -36,127 +38,29 @@ Window {
         /**************************************************************
          * 页面1：微信页面
          **************************************************************/
-        Item {  // Item是最基础的容器组件
-            id: page1  // 页面ID
+        HomePage {  // Item是最基础的容器组件
 
-            // Rectangle: 矩形背景
-            Rectangle {
-                anchors.fill: parent  // 填充整个页面
-                color: "#ffffff"      // 白色背景
-            }
-
-            // Text: 显示文本
-            Text {
-                text: "微信页面"       // 文本内容
-                font.pixelSize: 24    // 字体大小
-                color: "#07C160"      // 微信绿色
-                anchors.centerIn: parent  // 居中显示
-            }
-            FlatButton {
-                text: "FlatButton按钮测试"
-                anchors.centerIn: parent
-            }
         }
 
         /**************************************************************
          * 页面2：通讯录页面
          **************************************************************/
-        Item {
-            id: page2
-            Rectangle {
-                anchors.fill: parent
-                color: "#ffffff"
-            }
+        Page2 {
 
-            Text {
-                text: "通讯录页面"
-                font.pixelSize: 24
-                color: "#07C160"
-                anchors.centerIn: parent
-            }
-            MaterialButton {
-                text: "MaterialButton按钮"
-                anchors.centerIn: parent
-            }
         }
 
         /**************************************************************
          * 页面3：发现页面
          **************************************************************/
-        Item {
-            id: page3
-            Rectangle {
-                anchors.fill: parent
-                color: "#ffffff"
-            }
+        Page3 {
 
-            Text {
-                text: "发现页面"
-                font.pixelSize: 24
-                color: "#07C160"
-                anchors.centerIn: parent
-            }
         }
 
         /**************************************************************
          * 页面4：我页面
          **************************************************************/
-        Item {
-            id: page4
-            Rectangle {
-                anchors.fill: parent
-                color: "#ffffff"
-            }
+        Page4 {
 
-            ColumnLayout {
-                anchors.centerIn: parent
-                spacing: 20
-
-                // Material 风格按钮
-                MaterialButton {
-                    text: "Material 按钮"
-                    primaryColor: "#e74c3c"
-                    hoverColor: "#c0392b"
-                    Layout.alignment: Qt.AlignHCenter
-
-                    onClicked: console.log("Material 按钮被点击")
-                }
-
-                // 扁平化按钮
-                FlatButton {
-                    text: "扁平化按钮"
-                    baseColor: "#2ecc71"
-                    Layout.alignment: Qt.AlignHCenter
-
-                    onClicked: console.log("扁平按钮被点击")
-                }
-
-                // 3D 按钮
-                ThreeDButton {
-                    text: "3D 按钮"
-                    topColor: "#9b59b6"
-                    sideColor: "#8e44ad"
-                    Layout.alignment: Qt.AlignHCenter
-
-                    onClicked: console.log("3D 按钮被点击")
-                }
-
-                // 图标按钮
-                IconButton {
-                    iconSource: "qrc:/icons/heart.svg"
-                    color: "#e74c3c"
-                    size: 60
-                    Layout.alignment: Qt.AlignHCenter
-
-                    onClicked: console.log("图标按钮被点击")
-                }
-                Text {
-                    text: "我页面"
-                    font.pixelSize: 24
-                    color: "#07C160"
-                    //anchors.centerIn: parent
-                }
-            }
 
         }
     }

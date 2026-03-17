@@ -19,12 +19,16 @@ qt_add_qml_module(appuntitled3_qml
     VERSION 1.0
     QML_FILES
         Main.qml
+        # 添加子目录作为子模块
+    IMPORT_PATH
+        ${CMAKE_CURRENT_SOURCE_DIR}/Navi
     RESOURCES
         ButtonComponents/qmldir
         ButtonComponents/FlatButton.qml ButtonComponents/IconButton.qml ButtonComponents/MaterialButton.qml ButtonComponents/ThreeDButton.qml
         Navi/qmldir
-        Navi/NavigationBar.qml Navi/NavItem.qml
+        Navi/NavigationBar.qml Navi/NavItem.qml Navi/HomePage.qml  Navi/Page3.qml Navi/Page4.qml
         RESOURCES .gitignore
+        QML_FILES Navi/Page2.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

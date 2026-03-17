@@ -1,3 +1,7 @@
 module Navis
 NavigationBar 1.0 NavigationBar.qml
 NavItem 1.0 NavItem.qml
+HomePage 1.0 HomePage.qml
+Page2 1.0 Page2.qml
+Page3 1.0 Page3.qml
+Page4 1.0 Page4.qml
