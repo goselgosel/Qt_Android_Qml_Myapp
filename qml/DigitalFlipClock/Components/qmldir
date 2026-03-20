@@ -1,0 +1,4 @@
+module Components
+TimeDisplay 1.0 TimeDisplay.qml
+TimeUnit 1.0 TimeUnit.qml
+

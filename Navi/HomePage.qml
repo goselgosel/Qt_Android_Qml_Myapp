@@ -21,5 +21,8 @@ Page {
     FlatButton {
         text: "FlatButton按钮测试"
         anchors.centerIn: parent
+        onClicked: {
+            mainStack.push(twowindow)
+        }
     }
 }

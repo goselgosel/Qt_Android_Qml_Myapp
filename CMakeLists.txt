@@ -29,6 +29,9 @@ qt_add_qml_module(appuntitled3_qml
         Navi/NavigationBar.qml Navi/NavItem.qml Navi/HomePage.qml  Navi/Page3.qml Navi/Page4.qml
         RESOURCES .gitignore
         QML_FILES Navi/Page2.qml
+        QML_FILES qml/DigitalFlipClock/DigitalFlipClock.qml
+RESOURCES qml/DigitalFlipClock/Components/qmldir
+QML_FILES qml/DigitalFlipClock/Components/TimeDisplay.qml qml/DigitalFlipClock/Components/TimeUnit.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

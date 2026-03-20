@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 17.0.0, 2026-03-17T00:03:38. -->
+<!-- Written by QtCreator 17.0.0, 2026-03-20T09:08:06. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -104,27 +104,27 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_SDK_ROOT:PATH=E:/Qt/Qt/Android/Sdk
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_BUILD_TYPE:STRING=Debug
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
--DANDROID_PLATFORM:STRING=android-23
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
--DQT_MAINTENANCE_TOOL:FILEPATH=E:/Qt/Qt6.6.3/MaintenanceTool.exe
--DANDROID_NDK:PATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_ABI:STRING=x86_64
--DCMAKE_GENERATOR:STRING=NMake Makefiles JOM
 -DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DANDROID_PLATFORM:STRING=android-23
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=E:/Qt/Qt/Android/Sdk
+-DQT_MAINTENANCE_TOOL:FILEPATH=E:/Qt/Qt6.6.3/MaintenanceTool.exe
+-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DCMAKE_BUILD_TYPE:STRING=Debug
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_GENERATOR:STRING=NMake Makefiles JOM
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+-DANDROID_ABI:STRING=x86_64
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DANDROID_NDK:PATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
 -DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}</value>
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON</value>
     <value type="QString" key="CMake.Source.Directory">E:\7.Learn\19.QT\android_qt\untitled3_qml</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">E:\7.Learn\19.QT\android_qt\untitled3_qml\build\Qt_6_8_3_for_Android_x86_64-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
@@ -142,7 +142,7 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.1">
       <value type="QString" key="BuildTargetSdk">android-35</value>
       <value type="QString" key="BuildToolsVersion"></value>
-      <value type="QString" key="KeystoreLocation"></value>
+      <value type="QString" key="KeystoreLocation">E:/7.Learn/19.QT/android_qt/untitled2/android_release.keystore</value>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">构建安卓 APK</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">QmakeProjectManager.AndroidBuildApkStep</value>
@@ -289,27 +289,27 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_SDK_ROOT:PATH=E:/Qt/Qt/Android/Sdk
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_BUILD_TYPE:STRING=Debug
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
--DANDROID_PLATFORM:STRING=android-23
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
--DQT_MAINTENANCE_TOOL:FILEPATH=E:/Qt/Qt6.6.3/MaintenanceTool.exe
--DANDROID_NDK:PATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_ABI:STRING=arm64-v8a
--DCMAKE_GENERATOR:STRING=NMake Makefiles JOM
 -DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DANDROID_PLATFORM:STRING=android-23
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=E:/Qt/Qt/Android/Sdk
+-DQT_MAINTENANCE_TOOL:FILEPATH=E:/Qt/Qt6.6.3/MaintenanceTool.exe
+-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DCMAKE_BUILD_TYPE:STRING=Debug
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_GENERATOR:STRING=NMake Makefiles JOM
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+-DANDROID_ABI:STRING=arm64-v8a
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DANDROID_NDK:PATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
 -DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}</value>
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON</value>
     <value type="QString" key="CMake.Source.Directory">E:\7.Learn\19.QT\android_qt\untitled3_qml</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">E:\7.Learn\19.QT\android_qt\untitled3_qml\build\Qt_6_8_3_for_Android_arm64_v8a-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
@@ -411,27 +411,27 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_SDK_ROOT:PATH=E:/Qt/Qt/Android/Sdk
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_BUILD_TYPE:STRING=Release
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
--DANDROID_PLATFORM:STRING=android-23
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
--DQT_MAINTENANCE_TOOL:FILEPATH=E:/Qt/Qt6.6.3/MaintenanceTool.exe
--DANDROID_NDK:PATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_ABI:STRING=arm64-v8a
--DCMAKE_GENERATOR:STRING=NMake Makefiles JOM
 -DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DANDROID_PLATFORM:STRING=android-23
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=E:/Qt/Qt/Android/Sdk
+-DQT_MAINTENANCE_TOOL:FILEPATH=E:/Qt/Qt6.6.3/MaintenanceTool.exe
+-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DCMAKE_BUILD_TYPE:STRING=Release
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_GENERATOR:STRING=NMake Makefiles JOM
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+-DANDROID_ABI:STRING=arm64-v8a
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DANDROID_NDK:PATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Qt/Qt/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
 -DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}</value>
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON</value>
     <value type="QString" key="CMake.Source.Directory">E:\7.Learn\19.QT\android_qt\untitled3_qml</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">E:\7.Learn\19.QT\android_qt\untitled3_qml\build\Qt_6_8_3_for_Android_arm64_v8a-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
