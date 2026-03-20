@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 17.0.0, 2026-03-20T09:08:06. -->
+<!-- Written by QtCreator 17.0.0, 2026-03-20T15:38:54. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -98,7 +98,7 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{df321168-d407-4aa0-a84c-a1aa2e6bda5e}</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
-   <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">1</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="QString" key="CMake.Build.Type">Debug</value>
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
@@ -177,7 +177,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Debug (imported)</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
     <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
-    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">1</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
       <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
@@ -219,14 +219,38 @@
      <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
      <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
      <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">appuntitled3_qml</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:</value>
      <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">appuntitled3_qml</value>
      <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
      <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
      <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     </valuemap>
-    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.1">
+     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+     <value type="int" key="Analyzer.Valgrind.Callgrind.CostFormat">0</value>
+     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+     <value type="QList&lt;int&gt;" key="Analyzer.Valgrind.VisibleErrorKinds"></value>
+     <valuelist type="QVariantList" key="Android.PostStartShellCmdListKey">
+      <value type="QString"></value>
+     </valuelist>
+     <valuelist type="QVariantList" key="Android.PreStartShellCmdListKey">
+      <value type="QString"></value>
+     </valuelist>
+     <valuelist type="QVariantList" key="CustomOutputParsers"/>
+     <value type="int" key="PE.EnvironmentAspect.Base">0</value>
+     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">myapp</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:</value>
+     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">myapp</value>
+     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    </valuemap>
+    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">2</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.BuildConfigurationCount">1</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
@@ -263,14 +287,38 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">appuntitled3_qml</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">appuntitled3_qml</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
    </valuemap>
-   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.1">
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Valgrind.Callgrind.CostFormat">0</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <value type="QList&lt;int&gt;" key="Analyzer.Valgrind.VisibleErrorKinds"></value>
+    <valuelist type="QVariantList" key="Android.PostStartShellCmdListKey">
+     <value type="QString"></value>
+    </valuelist>
+    <valuelist type="QVariantList" key="Android.PreStartShellCmdListKey">
+     <value type="QString"></value>
+    </valuelist>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">0</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
+    <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">myapp</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">myapp</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+   </valuemap>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">2</value>
   </valuemap>
  </data>
  <data>
@@ -519,9 +567,9 @@
      <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
      <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
      <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
-     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">myapp</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:</value>
-     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">appuntitled3_qml</value>
+     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">myapp</value>
      <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
      <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
      <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
@@ -563,9 +611,9 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph &quot;dwarf,4096&quot; -F 250</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">myapp</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">appuntitled3_qml</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">myapp</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

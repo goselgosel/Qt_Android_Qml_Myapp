@@ -3,7 +3,7 @@ import QtQuick 6.5
 import QtQuick.Window 6.5
 import QtQuick.Layouts 1.15
 import QtQuick.Controls // 控件模块
-import "./Navi"
+import "./qml/Navi"
 import "./qml/DigitalFlipClock"
 //import Navis 1.0
 
@@ -15,10 +15,12 @@ Window {
 	height: 960         // 窗口高度
 	title: "小软件哈哈"  // 窗口标题
 	color: "#f0f0f0"    // 窗口背景色（微信背景色）
+	//flags: Qt.Window | Qt.FramelessWindowHint
 	StackView {
 		id: mainStack
 		anchors.fill: parent
 		initialItem: swipeViewContainer  // 初始显示 SwipeView
+		//opacity: 0.5
 	}
 
 	Component {
@@ -41,30 +43,19 @@ Window {
 				// true = 允许手指左右滑动切换
 				interactive: true
 
-				/**************************************************************
-					 * 页面1：微信页面
-					 **************************************************************/
 				HomePage {  // Item是最基础的容器组件
 
 				}
 
-				/**************************************************************
-					 * 页面2：通讯录页面
-					 **************************************************************/
+
 				Page2 {
 
 				}
 
-				/**************************************************************
-					 * 页面3：发现页面
-					 **************************************************************/
 				Page3 {
 
 				}
 
-				/**************************************************************
-					 * 页面4：我页面
-					 **************************************************************/
 				Page4 {
 
 

@@ -1,4 +1,5 @@
 module Components
 TimeDisplay 1.0 TimeDisplay.qml
 TimeUnit 1.0 TimeUnit.qml
+TimeSetPage 1.0 TimeSetPage.qml
 

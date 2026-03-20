@@ -1,0 +1,3 @@
+module ComboBoxComponents
+ComboBoxStyled 1.0 ComboBoxStyled.qml
+CheckboxGroup 1.0 CheckboxGroup.qml
