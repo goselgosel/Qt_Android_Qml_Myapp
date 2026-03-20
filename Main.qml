@@ -11,8 +11,8 @@ import "./qml/DigitalFlipClock"
 Window {
 	id: root          // 为窗口设置ID，便于在其他地方引用
 	visible: true       // 设置窗口可见
-	width: 400          // 窗口宽度
-	height: 700         // 窗口高度
+	width: 540          // 窗口宽度
+	height: 960         // 窗口高度
 	title: "小软件哈哈"  // 窗口标题
 	color: "#f0f0f0"    // 窗口背景色（微信背景色）
 	StackView {
@@ -106,9 +106,9 @@ Window {
 		}
 	}
 	Component{
-		id:twowindow
+		id:digitalPage
 		Item {
-			id: name
+			id: digitalwin
 			DigitalFlipClock{
 
 			}

@@ -9,6 +9,21 @@ Item {
         color: "#ffffff"
     }
 
+    MaterialButton {
+        text: "翻页时钟"
+        primaryColor: "#e74c3c"
+        hoverColor: "#c0392b"
+        x:parent.width*0.1
+        y:parent.height*0.1
+        width: parent.width*0.4
+        height: parent.height*0.07
+
+        onClicked: {
+            console.log("Material 按钮被点击")
+            mainStack.push(digitalPage)
+        }
+    }
+
     ColumnLayout {
         anchors.centerIn: parent
         spacing: 20

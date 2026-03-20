@@ -14,6 +14,13 @@ qt_add_executable(appuntitled3_qml
     ButtonComponents/FlatButton.qml
 )
 
+# 在 qt_add_qml_module 之前添加
+qt_add_resources(appuntitled3_qml "app_images"
+    PREFIX "/"
+    FILES
+        resources/images/kafei.png
+)
+
 qt_add_qml_module(appuntitled3_qml
     URI untitled3_qml
     VERSION 1.0
@@ -30,8 +37,9 @@ qt_add_qml_module(appuntitled3_qml
         RESOURCES .gitignore
         QML_FILES Navi/Page2.qml
         QML_FILES qml/DigitalFlipClock/DigitalFlipClock.qml
-RESOURCES qml/DigitalFlipClock/Components/qmldir
-QML_FILES qml/DigitalFlipClock/Components/TimeDisplay.qml qml/DigitalFlipClock/Components/TimeUnit.qml
+        RESOURCES qml/DigitalFlipClock/Components/qmldir
+        QML_FILES qml/DigitalFlipClock/Components/TimeDisplay.qml qml/DigitalFlipClock/Components/TimeUnit.qml
+        #RESOURCES resources/images/kafei.png
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
