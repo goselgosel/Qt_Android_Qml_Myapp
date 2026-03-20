@@ -1,5 +1,0 @@
-module ButtonComponents
-MaterialButton 1.0 MaterialButton.qml
-FlatButton 1.0 FlatButton.qml
-ThreeDButton 1.0 ThreeDButton.qml
-IconButton 1.0 IconButton.qml
