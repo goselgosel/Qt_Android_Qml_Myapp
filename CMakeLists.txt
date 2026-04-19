@@ -33,7 +33,7 @@ qt_add_qml_module(myapp
         Main.qml
         # 添加子目录作为子模块
     IMPORT_PATH
-        ${CMAKE_CURRENT_SOURCE_DIR}/qml/*
+        ${CMAKE_CURRENT_SOURCE_DIR}/qml
     RESOURCES
         RESOURCES .gitignore
         QML_FILES qml/DigitalFlipClock/DigitalFlipClock.qml

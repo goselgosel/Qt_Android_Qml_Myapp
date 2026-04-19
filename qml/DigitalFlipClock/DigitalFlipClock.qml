@@ -115,8 +115,8 @@ Window {
         Item {
             id: digital_Swip_page_two
             // 关键：显式绑定到 SwipeView
-            width: swipeView.width
-            height: swipeView.height
+            width: digitalSwip.width
+            height: digitalSwip.height
             TimeSetPage {
 
             }

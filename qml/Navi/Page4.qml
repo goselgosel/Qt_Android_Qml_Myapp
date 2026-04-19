@@ -4,22 +4,18 @@ import QtQuick.Layouts 1.15
 
 Item {
     id: page4
-    // Rectangle {
-    //     anchors.fill: parent
-    //     color: "#ffffff"
-    // }
 
     MaterialButton {
-        text: "翻页时钟"
+        text: "Flip Clock"
         primaryColor: "#e74c3c"
         hoverColor: "#c0392b"
-        x:parent.width*0.1
-        y:parent.height*0.1
-        width: parent.width*0.4
-        height: parent.height*0.07
+        x: parent.width * 0.1
+        y: parent.height * 0.1
+        width: parent.width * 0.4
+        height: parent.height * 0.07
 
         onClicked: {
-            console.log("Material 按钮被点击")
+            console.log("Material button clicked")
             mainStack.push(digitalPage)
         }
     }
@@ -28,49 +24,41 @@ Item {
         anchors.centerIn: parent
         spacing: 20
 
-        // Material 风格按钮
         MaterialButton {
-            text: "Material 按钮"
+            text: "Material Button"
             primaryColor: "#e74c3c"
             hoverColor: "#c0392b"
             Layout.alignment: Qt.AlignHCenter
-
-            onClicked: console.log("Material 按钮被点击")
+            onClicked: console.log("Material button clicked")
         }
 
-        // 扁平化按钮
         FlatButton {
-            text: "扁平化按钮"
+            text: "Flat Button"
             baseColor: "#2ecc71"
             Layout.alignment: Qt.AlignHCenter
-
-            onClicked: console.log("扁平按钮被点击")
+            onClicked: console.log("Flat button clicked")
         }
 
-        // 3D 按钮
         ThreeDButton {
-            text: "3D 按钮"
+            text: "3D Button"
             topColor: "#9b59b6"
             sideColor: "#8e44ad"
             Layout.alignment: Qt.AlignHCenter
-
-            onClicked: console.log("3D 按钮被点击")
+            onClicked: console.log("3D button clicked")
         }
 
-        // 图标按钮
         IconButton {
             iconSource: "qrc:/icons/heart.svg"
             color: "#e74c3c"
             size: 60
             Layout.alignment: Qt.AlignHCenter
-
-            onClicked: console.log("图标按钮被点击")
+            onClicked: console.log("Icon button clicked")
         }
+
         Text {
-            text: "我页面"
+            text: "Me Page"
             font.pixelSize: 24
             color: "#07C160"
-            //anchors.centerIn: parent
         }
     }
 }

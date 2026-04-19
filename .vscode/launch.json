@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run myapp (Qt 6.8.3 Desktop)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/vscode-desktop-debug/myapp.exe",
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+            "miDebuggerPath": "E:/Qt/Qt/Tools/mingw1310_64/bin/gdb.exe",
+            "preLaunchTask": "qt-build-desktop",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "E:/Qt/Qt/6.8.3/mingw_64/bin;E:/Qt/Qt/Tools/mingw1310_64/bin;${env:PATH}"
+                }
+            ]
+        }
+    ]
+}

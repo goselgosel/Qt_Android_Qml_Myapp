@@ -1,3 +1,11 @@
 {
-    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/vscode-desktop-debug/compile_commands.json",
+    "cmake.useCMakePresets": "always",
+    "cmake.configurePreset": "desktop-mingw-debug",
+    "cmake.buildPreset": "desktop-mingw-debug",
+    "cmake.configureOnOpen": false,
+    "cmake.environment": {
+        "PATH": "E:/Qt/Qt/6.8.3/mingw_64/bin;E:/Qt/Qt/Tools/mingw1310_64/bin;${env:PATH}"
+    }
 }

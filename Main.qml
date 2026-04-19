@@ -2,24 +2,24 @@
 import QtQuick 6.5
 import QtQuick.Window 6.5
 import QtQuick.Layouts 1.15
-import QtQuick.Controls // 控件模块
+import QtQuick.Controls // 鎺т欢妯″潡
 import "./qml/Navi"
 import "./qml/DigitalFlipClock"
 //import Navis 1.0
 
-// ApplicationWindow: 应用程序主窗口
+// ApplicationWindow: 搴旂敤绋嬪簭涓荤獥鍙?
 Window {
-	id: root          // 为窗口设置ID，便于在其他地方引用
-	visible: true       // 设置窗口可见
-	width: 540          // 窗口宽度
-	height: 960         // 窗口高度
-	title: "小软件哈哈"  // 窗口标题
-	color: "#f0f0f0"    // 窗口背景色（微信背景色）
+	id: root          // 涓虹獥鍙ｈ缃甀D锛屼究浜庡湪鍏朵粬鍦版柟寮曠敤
+	visible: true       // 璁剧疆绐楀彛鍙
+	width: 540          // 绐楀彛瀹藉害
+	height: 960         // 绐楀彛楂樺害
+    title: "My App"    // 绐楀彛鏍囬
+	color: "#f0f0f0"    // 绐楀彛鑳屾櫙鑹诧紙寰俊鑳屾櫙鑹诧級
 	//flags: Qt.Window | Qt.FramelessWindowHint
 	StackView {
 		id: mainStack
 		anchors.fill: parent
-		initialItem: swipeViewContainer  // 初始显示 SwipeView
+		initialItem: swipeViewContainer  // 鍒濆鏄剧ず SwipeView
 		//opacity: 0.5
 	}
 
@@ -28,22 +28,22 @@ Window {
 		Item {
 			id: swipeViewPage
 			anchors.fill: parent
-			// SwipeView: 可左右滑动的页面容器
-			// 功能：实现类似ViewPager的左右滑动切换效果
+			// SwipeView: 鍙乏鍙虫粦鍔ㄧ殑椤甸潰瀹瑰櫒
+			// 鍔熻兘锛氬疄鐜扮被浼糣iewPager鐨勫乏鍙虫粦鍔ㄥ垏鎹㈡晥鏋?
 			SwipeView {
-				id: swipeView           // ID，用于在其他地方引用
-				anchors.fill: parent    // 填充整个父窗口
+				id: swipeView           // ID锛岀敤浜庡湪鍏朵粬鍦版柟寮曠敤
+				anchors.fill: parent    // 濉厖鏁翠釜鐖剁獥鍙?
 
-				// currentIndex: 当前显示的页面索引
-				// 绑定到导航栏的currentIndex，实现双向同步
-				//currentIndex: 1 // 改为 0 看第一页，1 看第二页，以此类推
+				// currentIndex: 褰撳墠鏄剧ず鐨勯〉闈㈢储寮?
+				// 缁戝畾鍒板鑸爮鐨刢urrentIndex锛屽疄鐜板弻鍚戝悓姝?
+				//currentIndex: 1 // 鏀逛负 0 鐪嬬涓€椤碉紝1 鐪嬬浜岄〉锛屼互姝ょ被鎺?
 				currentIndex: navBar.currentIndex
 
-				// interactive: 是否允许用户交互滑动
-				// true = 允许手指左右滑动切换
+				// interactive: 鏄惁鍏佽鐢ㄦ埛浜や簰婊戝姩
+				// true = 鍏佽鎵嬫寚宸﹀彸婊戝姩鍒囨崲
 				interactive: true
 
-				HomePage {  // Item是最基础的容器组件
+				HomePage {  // Item鏄渶鍩虹鐨勫鍣ㄧ粍浠?
 
 				}
 
@@ -63,34 +63,34 @@ Window {
 			}
 
 			/**************************************************************
-				 * 底部导航栏
+				 * 搴曢儴瀵艰埅鏍?
 				 **************************************************************/
-			// 引用自定义组件 NavigationBar
+			// 寮曠敤鑷畾涔夌粍浠?NavigationBar
 			NavigationBar {
-				id: navBar           // 组件ID
-				anchors.bottom: parent.bottom  // 锚定在父窗口底部
-				width: parent.width            // 宽度等于父窗口宽度
-				height: 60                     // 导航栏高度
+				id: navBar           // 缁勪欢ID
+				anchors.bottom: parent.bottom  // 閿氬畾鍦ㄧ埗绐楀彛搴曢儴
+				width: parent.width            // 瀹藉害绛変簬鐖剁獥鍙ｅ搴?
+				height: 60                     // 瀵艰埅鏍忛珮搴?
 
-				// onItemClicked: 处理导航项点击事件的信号处理器
-				// 当用户在导航栏点击某个项目时触发
+				// onItemClicked: 澶勭悊瀵艰埅椤圭偣鍑讳簨浠剁殑淇″彿澶勭悊鍣?
+				// 褰撶敤鎴峰湪瀵艰埅鏍忕偣鍑绘煇涓」鐩椂瑙﹀彂
 				onItemClicked: function(index) {
-					// 切换SwipeView到对应的页面
+					// 鍒囨崲SwipeView鍒板搴旂殑椤甸潰
 					swipeView.currentIndex = index
 				}
 			}
 
 			/**************************************************************
-				 * 连接器：同步滑动和点击的状态
+				 * 杩炴帴鍣細鍚屾婊戝姩鍜岀偣鍑荤殑鐘舵€?
 				 **************************************************************/
 			Connections {
-				// target: 指定要监听的对象
+				// target: 鎸囧畾瑕佺洃鍚殑瀵硅薄
 				target: swipeView
 
-				// 监听SwipeView的currentIndexChanged信号
-				// 当用户左右滑动页面时触发
+				// 鐩戝惉SwipeView鐨刢urrentIndexChanged淇″彿
+				// 褰撶敤鎴峰乏鍙虫粦鍔ㄩ〉闈㈡椂瑙﹀彂
 				function onCurrentIndexChanged() {
-					// 更新导航栏的选中状态
+					// 鏇存柊瀵艰埅鏍忕殑閫変腑鐘舵€?
 					navBar.currentIndex = swipeView.currentIndex
 				}
 			}

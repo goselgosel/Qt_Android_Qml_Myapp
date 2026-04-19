@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "qt-configure-desktop",
+            "type": "shell",
+            "command": "cmake --preset desktop-mingw-debug",
+            "options": {
+                "env": {
+                    "PATH": "E:/Qt/Qt/6.8.3/mingw_64/bin;E:/Qt/Qt/Tools/mingw1310_64/bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "qt-build-desktop",
+            "type": "shell",
+            "command": "cmake --build --preset desktop-mingw-debug --parallel",
+            "dependsOn": "qt-configure-desktop",
+            "options": {
+                "env": {
+                    "PATH": "E:/Qt/Qt/6.8.3/mingw_64/bin;E:/Qt/Qt/Tools/mingw1310_64/bin;${env:PATH}"
+                }
+            },
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "qt-smoke-run-offscreen",
+            "type": "shell",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File .vscode/smoke-test.ps1",
+            "dependsOn": "qt-build-desktop",
+            "problemMatcher": []
+        }
+    ]
+}

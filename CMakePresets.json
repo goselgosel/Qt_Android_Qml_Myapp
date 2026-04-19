@@ -2,9 +2,24 @@
   "version": 3,
   "configurePresets": [
     {
+      "name": "desktop-mingw-debug",
+      "displayName": "Desktop MinGW Debug",
+      "description": "Desktop debug build with Qt 6.8.3 MinGW",
+      "generator": "MinGW Makefiles",
+      "binaryDir": "${sourceDir}/build/vscode-desktop-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_PREFIX_PATH": "E:/Qt/Qt/6.8.3/mingw_64",
+        "CMAKE_C_COMPILER": "E:/Qt/Qt/Tools/mingw1310_64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "E:/Qt/Qt/Tools/mingw1310_64/bin/g++.exe",
+        "CMAKE_MAKE_PROGRAM": "E:/Qt/Qt/Tools/mingw1310_64/bin/mingw32-make.exe"
+      }
+    },
+    {
       "name": "android-arm64-debug",
       "displayName": "Android ARM64 Debug",
-      "description": "为 Android ARM64 设备配置 Debug 构建",
+      "description": "Android ARM64 debug preset",
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
@@ -15,6 +30,16 @@
         "CMAKE_PREFIX_PATH": "E:/Qt/Qt/6.8.3/android_arm64_v8a",
         "QT_HOST_PATH": "E:/Qt/Qt/6.8.3/mingw_64"
       }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "desktop-mingw-debug",
+      "configurePreset": "desktop-mingw-debug"
+    },
+    {
+      "name": "android-arm64-debug",
+      "configurePreset": "android-arm64-debug"
     }
   ]
 }
