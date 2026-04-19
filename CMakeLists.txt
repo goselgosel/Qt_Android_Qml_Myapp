@@ -68,3 +68,13 @@ install(TARGETS myapp
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+# --- 为 VS Code CMake Tools 添加 Android 支持 ---
+if(ANDROID)
+    # 查找并加载 Qt 的 Android 支持模块
+    find_package(Qt6 COMPONENTS AndroidExtras REQUIRED)
+    
+    # qt_finalize_project() 是 Qt 6 for Android 打包 APK 的关键步骤
+    # 它负责处理依赖、资源打包和生成 AndroidManifest 等
+    qt_finalize_project()
+endif()
