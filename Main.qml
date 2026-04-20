@@ -1,108 +1,155 @@
-// main.qml
 import QtQuick 6.5
-import QtQuick.Window 6.5
+import QtQuick.Controls 6.5
 import QtQuick.Layouts 1.15
-import QtQuick.Controls // 鎺т欢妯″潡
-import "./qml/Navi"
-import "./qml/DigitalFlipClock"
-//import Navis 1.0
+import QtQuick.Window 6.5
+import "./qml/App/pages" as Pages
 
-// ApplicationWindow: 搴旂敤绋嬪簭涓荤獥鍙?
-Window {
-	id: root          // 涓虹獥鍙ｈ缃甀D锛屼究浜庡湪鍏朵粬鍦版柟寮曠敤
-	visible: true       // 璁剧疆绐楀彛鍙
-	width: 540          // 绐楀彛瀹藉害
-	height: 960         // 绐楀彛楂樺害
-    title: "My App"    // 绐楀彛鏍囬
-	color: "#f0f0f0"    // 绐楀彛鑳屾櫙鑹诧紙寰俊鑳屾櫙鑹诧級
-	//flags: Qt.Window | Qt.FramelessWindowHint
-	StackView {
-		id: mainStack
-		anchors.fill: parent
-		initialItem: swipeViewContainer  // 鍒濆鏄剧ず SwipeView
-		//opacity: 0.5
-	}
+// 应用主壳：
+// 1) 统一导航（StackView）
+// 2) 统一返回键逻辑（安卓返回键 / 侧边返回 / ESC）
+// 3) 为各页面提供 scaleFactor 做横竖屏自适应
+ApplicationWindow {
+    id: root
 
-	Component {
-		id: swipeViewContainer
-		Item {
-			id: swipeViewPage
-			anchors.fill: parent
-			// SwipeView: 鍙乏鍙虫粦鍔ㄧ殑椤甸潰瀹瑰櫒
-			// 鍔熻兘锛氬疄鐜扮被浼糣iewPager鐨勫乏鍙虫粦鍔ㄥ垏鎹㈡晥鏋?
-			SwipeView {
-				id: swipeView           // ID锛岀敤浜庡湪鍏朵粬鍦版柟寮曠敤
-				anchors.fill: parent    // 濉厖鏁翠釜鐖剁獥鍙?
+    visible: true
+    width: 420
+    height: 860
+    title: "多功能日常工具箱"
+    color: "#f5f7fb"
 
-				// currentIndex: 褰撳墠鏄剧ず鐨勯〉闈㈢储寮?
-				// 缁戝畾鍒板鑸爮鐨刢urrentIndex锛屽疄鐜板弻鍚戝悓姝?
-				//currentIndex: 1 // 鏀逛负 0 鐪嬬涓€椤碉紝1 鐪嬬浜岄〉锛屼互姝ょ被鎺?
-				currentIndex: navBar.currentIndex
+    // 自适应缩放：以常见手机设计稿宽 390 为基准，限制缩放范围避免过大/过小。
+    readonly property real scaleFactor: Math.max(0.82, Math.min(width / 390, height / 844))
+    readonly property bool isLandscape: width > height
 
-				// interactive: 鏄惁鍏佽鐢ㄦ埛浜や簰婊戝姩
-				// true = 鍏佽鎵嬫寚宸﹀彸婊戝姩鍒囨崲
-				interactive: true
+    // 当前页面标题与头部显示控制（数字时钟页面会隐藏头部）。
+    readonly property string currentPageTitle: {
+        if (!stackView.currentItem || stackView.currentItem.pageTitle === undefined) {
+            return "多功能日常工具箱"
+        }
+        return stackView.currentItem.pageTitle
+    }
+    readonly property bool currentPageHideHeader: !!(stackView.currentItem && stackView.currentItem.hideAppHeader === true)
 
-				HomePage {  // Item鏄渶鍩虹鐨勫鍣ㄧ粍浠?
+    // 统一返回行为：优先回栈，栈底时退出。
+    function handleBackAction() {
+        if (stackView.depth > 1) {
+            stackView.pop()
+        } else {
+            Qt.quit()
+        }
+    }
 
-				}
+    // 首页工具入口分发：只维护 ID -> Component 映射。
+    function openTool(toolId) {
+        var component = null
+        switch (toolId) {
+        case "digitalClock": component = digitalClockPageComponent; break
+        case "notes": component = notesPageComponent; break
+        case "calculator": component = calculatorPageComponent; break
+        case "stopwatch": component = stopwatchPageComponent; break
+        case "countdown": component = countdownPageComponent; break
+        case "todo": component = todoPageComponent; break
+        case "converter": component = converterPageComponent; break
+        case "tip": component = tipPageComponent; break
+        case "picker": component = pickerPageComponent; break
+        case "dateCalc": component = dateCalcPageComponent; break
+        case "currency": component = currencyPageComponent; break
+        case "quickAccess": component = quickAccessPageComponent; break
+        }
 
+        if (component !== null) {
+            stackView.push(component)
+        }
+    }
 
-				Page2 {
+    header: ToolBar {
+        visible: !root.currentPageHideHeader
+        height: 56 * root.scaleFactor
+        contentHeight: height
 
-				}
+        RowLayout {
+            anchors.fill: parent
+            anchors.leftMargin: 12 * root.scaleFactor
+            anchors.rightMargin: 12 * root.scaleFactor
+            spacing: 10 * root.scaleFactor
 
-				Page3 {
+            ToolButton {
+                visible: stackView.depth > 1
+                enabled: visible
+                text: "返回"
+                onClicked: root.handleBackAction()
+            }
 
-				}
+            Label {
+                Layout.fillWidth: true
+                text: root.currentPageTitle
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                font.pixelSize: 19 * root.scaleFactor
+                font.bold: true
+                color: "#1f2a44"
+                elide: Text.ElideRight
+            }
 
-				Page4 {
+            Item { implicitWidth: (stackView.depth > 1 ? 56 : 1) * root.scaleFactor }
+        }
+    }
 
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        clip: true
+        initialItem: homePageComponent
+    }
 
-				}
-			}
+    Component {
+        id: homePageComponent
+        Pages.HomePage {
+            scaleFactor: root.scaleFactor
+            isLandscape: root.isLandscape
+            onOpenTool: function(toolId) { root.openTool(toolId) }
+        }
+    }
 
-			/**************************************************************
-				 * 搴曢儴瀵艰埅鏍?
-				 **************************************************************/
-			// 寮曠敤鑷畾涔夌粍浠?NavigationBar
-			NavigationBar {
-				id: navBar           // 缁勪欢ID
-				anchors.bottom: parent.bottom  // 閿氬畾鍦ㄧ埗绐楀彛搴曢儴
-				width: parent.width            // 瀹藉害绛変簬鐖剁獥鍙ｅ搴?
-				height: 60                     // 瀵艰埅鏍忛珮搴?
+    Component { id: digitalClockPageComponent; Pages.DigitalClockPage { scaleFactor: root.scaleFactor; appWindow: root } }
+    Component { id: notesPageComponent; Pages.NotesPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: calculatorPageComponent; Pages.CalculatorPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: stopwatchPageComponent; Pages.StopwatchPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: countdownPageComponent; Pages.CountdownPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: todoPageComponent; Pages.TodoPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: converterPageComponent; Pages.ConverterPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: tipPageComponent; Pages.TipPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: pickerPageComponent; Pages.RandomPickerPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: dateCalcPageComponent; Pages.DateCalculatorPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: currencyPageComponent; Pages.CurrencyPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
+    Component { id: quickAccessPageComponent; Pages.QuickAccessPage { scaleFactor: root.scaleFactor; isLandscape: root.isLandscape } }
 
-				// onItemClicked: 澶勭悊瀵艰埅椤圭偣鍑讳簨浠剁殑淇″彿澶勭悊鍣?
-				// 褰撶敤鎴峰湪瀵艰埅鏍忕偣鍑绘煇涓」鐩椂瑙﹀彂
-				onItemClicked: function(index) {
-					// 鍒囨崲SwipeView鍒板搴旂殑椤甸潰
-					swipeView.currentIndex = index
-				}
-			}
+    // 安卓返回键/系统返回键映射。
+    Shortcut {
+        sequence: "Back"
+        onActivated: root.handleBackAction()
+    }
 
-			/**************************************************************
-				 * 杩炴帴鍣細鍚屾婊戝姩鍜岀偣鍑荤殑鐘舵€?
-				 **************************************************************/
-			Connections {
-				// target: 鎸囧畾瑕佺洃鍚殑瀵硅薄
-				target: swipeView
+    // 桌面调试时使用 ESC 模拟返回键。
+    Shortcut {
+        sequence: "Esc"
+        onActivated: root.handleBackAction()
+    }
 
-				// 鐩戝惉SwipeView鐨刢urrentIndexChanged淇″彿
-				// 褰撶敤鎴峰乏鍙虫粦鍔ㄩ〉闈㈡椂瑙﹀彂
-				function onCurrentIndexChanged() {
-					// 鏇存柊瀵艰埅鏍忕殑閫変腑鐘舵€?
-					navBar.currentIndex = swipeView.currentIndex
-				}
-			}
-		}
-	}
-	Component{
-		id:digitalPage
-		Item {
-			id: digitalwin
-			DigitalFlipClock{
+    // 某些安卓设备不会把返回动作映射成 Shortcut，而是直接分发按键事件。
+    // 这里兜底捕获 Qt.Key_Back，避免导航白屏或直接退进程。
+    Keys.onReleased: function(event) {
+        if (event.key === Qt.Key_Back) {
+            event.accepted = true
+            root.handleBackAction()
+        }
+    }
 
-			}
-		}
-	}
+    // 窗口关闭（含安卓手势返回触发的关闭路径）统一回栈，避免白屏/直接销毁。
+    onClosing: function(close) {
+        if (stackView.depth > 1) {
+            close.accepted = false
+            root.handleBackAction()
+        }
+    }
 }
